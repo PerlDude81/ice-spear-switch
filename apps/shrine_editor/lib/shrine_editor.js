@@ -37,7 +37,8 @@ module.exports = class Shrine_Editor extends Mubin_Editor {
      * @param {string} actorType
      */
     generateMubinPath(actorType) {
-        const mapDir = this.mubinName.startsWith("Remains")
+	// Added an || "Final" check here
+        const mapDir = (this.mubinName.startsWith("Remains") || this.mubinName.startsWith("Final"))
             ? "MainFieldDungeon"
             : "CDungeon";
         return path.join(

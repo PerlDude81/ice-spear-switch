@@ -153,7 +153,8 @@ module.exports = class App extends App_Base {
         if (files2) files = new Set([...files, ...files2]);
 
         for (const file of files) {
-            if (shrineRegex.test(file) || file.startsWith("Remains")) {
+	    // Added an || "Final" check here
+            if (shrineRegex.test(file) || file.startsWith("Remains") || file.startsWith("Final")) {
                 // <- 4 main dungeons
                 const shrineName = file.replace(".pack", "");
                 shrinesHtml += `<option value="${shrineName}">${shrineName}</option>`;

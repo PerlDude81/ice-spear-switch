@@ -73,6 +73,13 @@ module.exports = class App extends App_Base {
     this.initTools();
   }
 
+    getRemainingHashes() {
+        var filePath = process.cwd()+"/free-hashes.txt";
+        var freeData = fs.readFileSync(filePath, 'utf8');
+        return freeData.toString().split('\n').length;
+    }
+
+
   initTools() {
     this.node.querySelector(".data-tool-save").onclick = () => this.save();
     this.node.querySelector(".data-tool-openFieldDir").onclick = () => {
@@ -252,10 +259,22 @@ module.exports = class App extends App_Base {
     await this.loader.show();
 
     await this.fieldEditor.save();
-    await this.fieldEditor.saveModLocation();
 
     await this.loader.hide();
     Notify.success(`Field '${this.fieldSection}' saved`);
+
+    // update remaning hashes
+
+    // where are we, if in dungeon, doesn't matter
+    var nameReg = new RegExp("\\\\field\\\\data\\\\","");
+    var remainHashes = "n/a";
+    if (nameReg.test(this.fieldDir)) {
+	var filePath = process.cwd()+"/free-hashes.txt";
+	var freeData = fs.readFileSync(filePath, 'utf8');
+	remainHashes = freeData.toString().split('\n').length - 1;
+    }
+    this.node.querySelector(".data-actors-remainingHashes").innerHTML = remainHashes;
+
   }
 
   async packStatic() {
@@ -312,9 +331,9 @@ module.exports = class App extends App_Base {
       this.render();
 
       // some performance cuts
-      this.fieldEditor.setRenderSetting("targetFPS", "number", 30);
-      this.fieldEditor.setRenderSetting("camSpeed", "number", 2);
-      //this.fieldEditor.setRenderSetting("accurateTimer", "bool", true);
+      this.fieldEditor.setRenderSetting("targetFPS", "number", 60);
+      this.fieldEditor.setRenderSetting("camSpeed", "number", .45);
+      this.fieldEditor.setRenderSetting("accurateTimer", "bool", true);
     } catch (e) {
       await this.loader.hide();
       console.log(e);

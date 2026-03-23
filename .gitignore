@@ -18,3 +18,4 @@ dist/
 .idea/
 *.iml
 yarn.lock
+free-hashes.txt

@@ -1,9 +1,35 @@
 #  Ice-Spear - a Breath of the Wild Editor - Template Builder Version
 ![alt Ice-Spear](assets/icons/icon_256_thin.png)
 
-- **ice-spear-team**
-  - Will add more later.
+For any information on how to use this, please see the Wiki: <br/>
+https://gitlab.com/ice-spear-tools/ice-spear/wikis/home
 
+Issues for bugs and features are inside the issue-repo: <br/>
+https://gitlab.com/ice-spear-tools/issue-tracker/issues
+
+### Releases
+
+- https://github.com/creep3rcrafter/ice-spear/releases/tag/2.6.0b1
+- Just Extract and run Ice-Spear.exe
+
+### Whats New
+
+- **How to use it**
+  - Added a new build template button under the Actor-Templates section.
+  - Simply select all the actors that you want.
+  - Enter the Template name just use simple characters.
+  - Then click build template.
+  - The Template will be copied into your templates 
+  folder at `C:\Users\user\.ice-spear\templates` in .json format.
+  - Finally Now check your templates and it should be ready to use.
+  
+- **Notes**
+  - The first Actor you select be the center point for the template
+  other Actors local postion will be based off the first selected.
+  - If any linked Actors werent selected they will have to be 
+  manualy removed or added in the template and will have an `Unknown` HashID.
+  - If linked Actors have been selected any refrences will be set to the correct `{ID#}` HashID.
+  - If you have issues please report them.
 
 ### Project Setup
 

@@ -24,7 +24,7 @@
         }
     </style>
 
-    <h5 class="nav-group-title">Objects</h5>
+    <!-- <h5 class="nav-group-title">Objects</h5> -->
 
     <span class="nav-group-item">
         <label><input type="checkbox" checked class="data-tool-renderer-actorsVisible">
@@ -52,10 +52,26 @@
         </label>
     </span>
 
-    <h5 class="nav-group-title">Renderer</h5>
+    <!-- <h5 class="nav-group-title">Renderer</h5> -->
+
+    <span class="nav-group-item">
+        <label>Camera-Speed</label>
+        <br/>
+        <input type="range" min="0.0625" max="4" value="0.125" step="0.0625" class="data-tool-renderer-camSpeed">
+    </span>
+    <span class="nav-group-item">
+        <label>Boost-Speed (Left Shift)</label>
+        <br/>
+        <input type="range" min="0.0625" max="4" value="1.5" step="0.0625" class="data-tool-renderer-boostSpeed">
+    </span>
+    <span class="nav-group-item">
+        <label>Target FPS:</label>
+        
+        <input type="number" value="60" class="data-tool-renderer-targetFPS">
+    </span>
 
     <span class="nav-group-item tooltip">
-        <label><input type="checkbox" class="data-tool-renderer-accurateTimer">
+        <label><input type="checkbox" checked class="data-tool-renderer-accurateTimer">
             <span>Accurate-Timer</span>
         </label>
         <span class="tooltiptext">
@@ -88,15 +104,5 @@
         </label>
     </span>
 
-    <span class="nav-group-item">
-        <label>Target FPS:</label>
-        
-        <input type="number" value="60" class="data-tool-renderer-targetFPS">
-    </span>
 
-    <span class="nav-group-item">
-        <label>Camera-Speed</label>
-        <br/>
-        <input type="range" min="0.0625" max="4" value="0.125" step="0.0625" class="data-tool-renderer-camSpeed">
-    </span>
 </div>
